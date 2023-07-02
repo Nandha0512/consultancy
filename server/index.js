@@ -5,7 +5,7 @@ const db = require('./config/db')();
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-
+const path = require('path');
 
 //Routes
 const AuthRoutes = require('./Routes/User');
@@ -16,9 +16,16 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors({origin: true, credentials: true}));
 app.use(cookieParser());
 // Test 
-app.get('/', function(req, res){
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.get('/api/test', function(req, res){
     res.send("Hello world!");
 });
+
 //Admin Auth Routes
 app.use('/user',AuthRoutes)
 app.use('/product',ProductRoutes)
