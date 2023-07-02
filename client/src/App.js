@@ -41,7 +41,7 @@ import store from './store';
 import { useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = ""
+axios.defaults.baseURL = "appsamudhrikalakshana.onrender.com";
 function App() {
 
   useEffect(()=>{      
