@@ -15,7 +15,10 @@ app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors({origin: true, credentials: true}));
 app.use(cookieParser());
-
+// Test 
+app.get('/', function(req, res){
+    res.send("Hello world!");
+});
 //Admin Auth Routes
 app.use('/user',AuthRoutes)
 app.use('/product',ProductRoutes)
