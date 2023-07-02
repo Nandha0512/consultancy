@@ -40,6 +40,9 @@ import { loadUser } from './actions/AuthAction';
 import store from './store';
 import { useEffect } from 'react';
 
+import axios from 'axios';
+axios.defaults.baseURL ="http://127.0.0.1:4000";
+
 function App() {
 
   useEffect(()=>{      
