@@ -7,7 +7,7 @@ import React from 'react'
 const ProtectedRoutes = ({children, isAdmin}) => {
     const { isAuthenticated, loading, user } = useSelector(state => state.AuthState)
     if(!isAuthenticated && !loading) {
-        return <Navigate to="/admin/login" />
+        return <Navigate to="/login" />
     }
 
     if(isAuthenticated) {

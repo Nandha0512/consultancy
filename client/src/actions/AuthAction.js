@@ -5,10 +5,10 @@ import axios from 'axios';
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch(loginRequest());
-        alert('what happen')
+        // alert('what happen')
         let { data } = await axios.post('/user/admin/login', { email, password });
-        alert('login success');
         dispatch(loginSuccess(data));
+        alert('login success');
     } catch (err) {
         dispatch(loginFail(err.response.data.message));
     }

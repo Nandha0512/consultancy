@@ -51,8 +51,8 @@ function App() {
     <div className="App">
       <Sidebar/>
       <Routes>
-        <Route path='/overview' element={<ProtectedRoute><OverView/></ProtectedRoute>}/>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/' element={<ProtectedRoute><OverView/></ProtectedRoute>}/>
+        <Route path='/login' element={<Login/>}/>
         {/* Coordinator Routes */}
         <Route path='/admin/co' element={<ProtectedRoute><CoordinatorInsert/></ProtectedRoute>}/>
         <Route path='/admin/co/get' element={<ProtectedRoute><CoordinatorTable/></ProtectedRoute>}/>

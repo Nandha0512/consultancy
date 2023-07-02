@@ -20,7 +20,7 @@ function Login() {
 
     useEffect(()=>{
         if(isAuthenticated){
-            navigate('/overview')
+            navigate('/')
         }
     },[isAuthenticated])
     return (
