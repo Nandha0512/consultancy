@@ -18,17 +18,17 @@ app.use(cookieParser());
 // Test 
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.get('/api/test', function(req, res){
-    res.send("Hello world!");
+  res.send("Hello world!");
 });
 
 //Admin Auth Routes
 app.use('/user',AuthRoutes)
 app.use('/product',ProductRoutes)
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 app.listen(process.env.PORT,()=>{
